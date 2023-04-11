@@ -27,3 +27,10 @@ steps:
     mvn package
   displayName: 'Build with Maven'
 
+
+
+ task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'MyApp'
+    publishLocation: 'Container'
