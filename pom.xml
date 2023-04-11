@@ -47,5 +47,25 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  <repositories>
+    <repository>
+        <id>ananyahegde0300</id>
+        <url>https://pkgs.dev.azure.com/ananyahegde0300/_packaging/ananyahegde0300/maven/v1</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+<distributionManagement>
+    <repository>
+        <id>ananyahegde0300</id>
+        <url>https://pkgs.dev.azure.com/ananyahegde0300/_packaging/ananyahegde0300/maven/v1</url>
+    </repository>
+</distributionManagement>
+
 	
 </project>
