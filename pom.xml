@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <!-- Project metadata -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>helloworld</groupId>
   <artifactId>helloworld</artifactId>
-  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
   <name>Hello world sample web app</name>
   <url>http://maven.apache.org</url>
 
+  <!-- Dependencies -->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -17,9 +23,11 @@
     </dependency>
   </dependencies>
 
+  <!-- Build configuration -->
   <build>
     <finalName>helloworld</finalName>
     <plugins>
+      <!-- JaCoCo plugin for code coverage -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -40,39 +48,31 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Maven Deploy plugin for deploying to GitHub Packages -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.0.0-M1</version>
+        <configuration>
+          <altDeploymentRepository>github::default::https://maven.pkg.github.com/OWNER/REPOSITORY</altDeploymentRepository>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
+  <!-- Properties -->
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   
-  <repositories>
+  <!-- Distribution management -->
+  <distributionManagement>
     <repository>
-        <id>ananyahegde0300</id>
-        <url>https://pkgs.dev.azure.com/ananyahegde0300/_packaging/ananyahegde0300/maven/v1</url>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
+      <id>github</id>
+      <name>GitHub OWNER Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/ananya77777/azure-presentation-</url>
     </repository>
-</repositories>
-
-<distributionManagement>
-    <repository>
-        <id>ananyahegde0300</id>
-        <url>https://pkgs.dev.azure.com/ananyahegde0300/_packaging/ananyahegde0300/maven/v1</url>
-    </repository>
-</distributionManagement>
-	
-<scm>
-  <connection>scm:git:git://github.com/ananya77777/azure-presentation-.git</connection>
-  <developerConnection>scm:git:ssh://github.com/sriharshakr07/azure-presentation-.git</developerConnection>
-  <url>https://github.com/ananya77777/azure-presentation-.git/tree/master</url>
-</scm>
-
+  </distributionManagement>
 	
 </project>
