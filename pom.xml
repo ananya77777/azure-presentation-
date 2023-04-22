@@ -6,7 +6,7 @@
   
   <!-- Project metadata -->
   <modelVersion>4.0.0</modelVersion>
-  <groupId>helloworld</groupId>
+  <groupId>hello</groupId>
   <artifactId>helloworld</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -54,7 +54,7 @@
         <artifactId>maven-deploy-plugin</artifactId>
         <version>3.0.0-M1</version>
         <configuration>
-          <altDeploymentRepository>github::default::https://maven.pkg.github.com/OWNER/REPOSITORY</altDeploymentRepository>
+          <altDeploymentRepository>github::default::https://maven.pkg.github.com/ananya77777/azure-presentation-/</altDeploymentRepository>
         </configuration>
       </plugin>
     </plugins>
